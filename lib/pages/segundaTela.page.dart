@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SegundaTela extends StatefulWidget {
-  String? valor;
-  SegundaTela(String this.valor);
+  // String? valor;
+  // SegundaTela(this.valor); // Add the missing argument here
 
   @override
   State<SegundaTela> createState() {
@@ -17,8 +17,12 @@ class _SegundaTelaState extends State<SegundaTela> {
     return ElevatedButton(
       onPressed: () {
         setState(() {
-          Navigator.pop(context);
-          Navigator.of(context).pushReplacementNamed("/");
+          Navigator.of(context).push(
+        PageRouteBuilder(
+          pageBuilder: (context, animation, secondaryAnimation) => SegundaTela(),
+          // ...
+        ),
+          );
         });
       },
       child: Text('Texto digitado: ${valor}', style: TextStyle(fontSize: 20)),

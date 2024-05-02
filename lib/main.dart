@@ -9,8 +9,8 @@ void main() {
     initialRoute: '/',
     routes: {
       '/': (context) => MainPage(),
-      '/segunda_tela': (context) =>
-          SegundaTela(ModalRoute.of(context)?.settings.arguments as String),
+      '/primeira_tela': (context) => PrimeiraTela(),
+      '/segunda_tela': (context) => SegundaTela(),
     },
   ));
 }
